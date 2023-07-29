@@ -8,7 +8,7 @@ export class TodoDAO {
     }
 
     create = async (todo) => {
-        logger.debug({todo}, "invoking todo DAO")
+        logger.debug({todo}, "invoking todo DAO");
         const data = await this.db.todo.create({
             data: {
                 ...todo

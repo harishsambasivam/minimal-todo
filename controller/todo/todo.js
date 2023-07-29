@@ -12,12 +12,14 @@ export class TodoController {
   }
 
    createTodo = async(request, response) => {
+    logger.debug({body: request.body}, "invoking controller")
     const todo = request.body;
     // validate the todo schema
     const { error } = todoSchema.validate(todo);
     if (error) throw new Error(error.message);
     // create todo in database
     const createdTodo = await this.todoService.create(todo);
+    logger.trace({todo: createdTodo})
     return response.status(200).json({
       success: true,
       data: createdTodo,
