@@ -5,6 +5,6 @@ export class TodoService {
     }
 
     create = async (todo) => {
-        return await this.todo.create(todo);
+        return await this.todo.create(todo)
     }
 }
