@@ -1,5 +1,5 @@
-import config from "./config/index.js";
 import { createServer } from "./server.js";
+import config from "./config/index.js";
 import { PrismaClient } from '@prisma/client';
 import { TodoDAO } from "./data/todo/todo.js";
 import { TodoService } from "./service/todo/todo.js";
@@ -15,7 +15,7 @@ const todoService = new TodoService(todoDAO);
 const todoController = new TodoController(todoService);
 const todoRouter = createTodoRouter(todoController);
 
-server.use("/api/v1/todo", todoRouter)
+server.use("/api/v1/todo", todoRouter);
 
 server.listen(port, () => {
   logger.info(`server started on PORT ${port}`);
