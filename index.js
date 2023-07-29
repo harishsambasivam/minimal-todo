@@ -15,7 +15,7 @@ const todoService = new TodoService(todoDAO);
 const todoController = new TodoController(todoService);
 const todoRouter = createTodoRouter(todoController);
 
-server.use("/api/v1/todo", todoRouter);
+server.use("/api/v1/todo", todoRouter)
 
 server.listen(port, () => {
   logger.info(`server started on PORT ${port}`);
