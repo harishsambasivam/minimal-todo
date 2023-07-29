@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon --experimental-top-level-await index.js",
     "start": "node --experimental-top-level-await index.js",
-    "test": "NODE_OPTIONS='--experimental-vm-modules --experimental-specifier-resolution=node' jest"
+    "test": "vitest --watch"
   },
   "keywords": [],
   "author": "",
@@ -22,11 +22,8 @@
     "supertest": "^6.3.3"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.22.9",
-    "@babel/preset-env": "^7.22.9",
     "@prisma/client": "^5.0.0",
-    "esm": "^3.2.25",
-    "jest": "^29.6.2",
-    "prisma": "^5.0.0"
+    "prisma": "^5.0.0",
+    "vitest": "^0.33.0"
   }
 }
